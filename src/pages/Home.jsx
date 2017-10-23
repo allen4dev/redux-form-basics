@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import SynchronousValidation from './../shared/SynchronousValidation';
+import FieldLevelValidation from './../shared/FieldLevelValidation';
 
 class Home extends Component {
   submit = values => {
@@ -11,7 +11,7 @@ class Home extends Component {
     return (
       <div className="Home">
         <h1 className="Home-title">Redux Form</h1>
-        <SynchronousValidation onSubmit={this.submit} />
+        <FieldLevelValidation onSubmit={this.submit} />
       </div>
     );
   }
