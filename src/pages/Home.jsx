@@ -1,18 +1,17 @@
 import React, { Component } from 'react';
 
-import ContactForm from './../shared/ContactForm';
+import SynchronousValidation from './../shared/SynchronousValidation';
 
 class Home extends Component {
   submit = values => {
-    // print the form values to the console
-    console.log('Values:', values);
+    console.log('VALUES', values);
   };
 
   render() {
     return (
       <div className="Home">
         <h1 className="Home-title">Redux Form</h1>
-        <ContactForm onSubmit={this.submit} />
+        <SynchronousValidation onSubmit={this.submit} />
       </div>
     );
   }
