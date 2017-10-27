@@ -16,6 +16,7 @@ const About = props => {
           component={RenderField}
           type="text"
           label="Fullname"
+          placeholder="Alan Aliaga"
         />
 
         <Field
@@ -23,6 +24,7 @@ const About = props => {
           component={RenderField}
           type="email"
           label="Email"
+          placeholder="someEmail@example.test"
         />
 
         <Field
@@ -30,6 +32,7 @@ const About = props => {
           component={RenderField}
           type="text"
           label="Username"
+          placeholder="allen4dev"
         />
 
         <button type="submit" style={{ width: '100px', padding: '.5em' }}>
@@ -43,4 +46,6 @@ const About = props => {
 export default reduxForm({
   form: 'aboutForm',
   validate,
+  destroyOnUnmount: false,
+  forceUnregisterOnUnmount: true,
 })(About);
