@@ -9,24 +9,27 @@ class WizardForm extends Component {
     page: 1,
   };
 
+  nextPage = () => {
+    let page = this.state.page;
+    console.log('assd');
+
+    this.setState({ page: (page += 1) });
+  };
+
+  previousPage = () => {
+    let page = this.state.page;
+
+    this.setState({ page: (page -= 1) });
+  };
+
   render() {
     const { page } = this.state;
 
     return (
       <div>
-        {page === 1 && <About />}
+        {page === 1 && <About onSubmit={this.nextPage} />}
         {page === 2 && <Info />}
         {page === 3 && <Hobbies />}
-        <div>
-          <button
-            onClick={() => this.setState({ page: (this.state.page -= 1) })}>
-            -1
-          </button>
-          <button
-            onClick={() => this.setState({ page: (this.state.page += 1) })}>
-            +1
-          </button>
-        </div>
       </div>
     );
   }
