@@ -15,8 +15,8 @@ const Info = ({ previousPage, handleSubmit }) => {
       <h2 className="Info-title">Info</h2>
       <form className="Info-form" onSubmit={handleSubmit}>
         <Field
-          type="text"
           name="something"
+          type="text"
           component={RenderField}
           placeholder="Something"
         />
@@ -47,7 +47,7 @@ const Info = ({ previousPage, handleSubmit }) => {
 };
 
 export default reduxForm({
-  form: 'infoForm',
+  form: 'wizard',
   validate,
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,

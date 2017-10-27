@@ -21,8 +21,12 @@ export default values => {
     errors.something = 'Required';
   }
 
-  if (!values.random) {
-    errors.random = `Field ${values.random} is required`;
+  if (!values.artist) {
+    errors.artist = `Required`;
+  }
+
+  if (!values.sports) {
+    errors.sports = `Required`;
   }
 
   return errors;

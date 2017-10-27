@@ -44,7 +44,7 @@ const About = props => {
 };
 
 export default reduxForm({
-  form: 'aboutForm',
+  form: 'wizard',
   validate,
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,

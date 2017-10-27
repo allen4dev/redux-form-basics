@@ -7,7 +7,8 @@ import Hobbies from './Hobbies';
 class WizardForm extends Component {
   state = {
     page: 1,
-    message: null,
+    finish: false,
+    values: null,
   };
 
   nextPage = () => {
@@ -22,13 +23,13 @@ class WizardForm extends Component {
     this.setState({ page: (page -= 1) });
   };
 
-  finishForm = () => {
-    this.setState({ message: 'Form finished' });
+  finishForm = values => {
+    this.setState({ values });
   };
 
   render() {
     const { page } = this.state;
-
+    console.log(this.state.values);
     return (
       <div>
         {page === 1 && <About onSubmit={this.nextPage} />}
@@ -42,7 +43,17 @@ class WizardForm extends Component {
           />
         )}
 
-        {this.state.message && <h3>{this.state.message}</h3>}
+        {this.state.values && (
+          <div>
+            <h3>Finish Form</h3>
+            <p>Fullname: {this.state.values.fullname}</p>
+            <p>Email: {this.state.values.email}</p>
+            <p>Username: {this.state.values.username}</p>
+            <p>Sex: {this.state.values.sex}</p>
+            <p>Artist: {this.state.values.artist}</p>
+            <p>ESports: {this.state.values.sports}</p>
+          </div>
+        )}
       </div>
     );
   }
